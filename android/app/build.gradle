@@ -79,6 +79,7 @@ android {
         applicationId "com.guestapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        manifestPlaceholders = [auth0Domain: "goconcierge.auth0.com", auth0Scheme: "${applicationId}"]
         versionCode 1
         versionName "1.0"
     }
