@@ -18,7 +18,7 @@ const LoginScreen = () => {
 
   useEffect(() => {
     if (loggedIn) {
-      navigation.replace("Home");
+      navigation.replace("Logout");
     }
   }, [loggedIn]);
 
@@ -84,8 +84,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     padding: 12,
-    marginBottom: 20,
-    
+    marginBottom: 20,    
   },
   iconImage: {
     width: 24,

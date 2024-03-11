@@ -19,6 +19,7 @@ import LoginScreen from './src/screens/LoginScreen';
 import HomeScreen from './src/screens/HomeScreen';
 
 import { AuthContextProvider } from './src/context/AuthContext';
+import LogoutScreen from './src/screens/LogoutScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +33,7 @@ function App(): React.JSX.Element {
             <Stack.Screen name="Loading" component={LoadingScreen} />
             <Stack.Screen name="Login" component={LoginScreen} />
             <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Logout" component={LogoutScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </AuthContextProvider>

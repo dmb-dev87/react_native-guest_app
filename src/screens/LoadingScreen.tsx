@@ -17,7 +17,7 @@ const LoadingScreen = () => {
 
   useEffect(() => {
     if (loggedIn) {      
-      navigation.replace("Home");
+      navigation.replace("Logout");
     } else if (loggedIn === false) {
       navigation.replace("Login");
     }

@@ -4,6 +4,7 @@ export type RootStackParamList = {
   Home: undefined;
   Loading: undefined;
   Login: undefined;
+  Logout: undefined;
 }
 
 createStackNavigator<RootStackParamList>();
