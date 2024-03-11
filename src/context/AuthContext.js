@@ -64,25 +64,27 @@ const AuthContextProvider = (props) => {
 
   const login = async () => {
     try {
-      const credentials = await auth0.webAuth.authorize({
-        scope: 'openid email profile',
-      });
+      const credentials = await auth0.webAuth.authorize(
+        { additionalParameters: { prompt: 'login' } },
+        { ephemeralSession: true }
+      );
       await SInfo.setItem('guest_app_token', credentials.idToken, {});
       const user_data = await getUserData(credentials.idToken);
       setLoggedIn(true);
       setUserData(user_data);
     } catch (err) {
+      console.log(err);
       alert('Error logging in');
     }
   };
 
   const logout = async () => {
     try {
-      await auth0.webAuth.clearSession({});
       await SInfo.deleteItem('guest_app_token', {});
       setLoggedIn(false);
       setUserData(null);
     } catch (err) {
+      console.log(err)
       alert('Error logging out');
     }
   };

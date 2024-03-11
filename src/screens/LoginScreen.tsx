@@ -26,23 +26,21 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.loginView}>
+      <View style={styles.titleView}>
         <Text style={styles.welcomeText}>Welcome to</Text>
         <Text style={styles.appTitle}>Guest App</Text>
-
-        <TouchableOpacity style={styles.signInButton} onPress={()=>login()}>
-          <Image source={require("../img/google.jpg")} style={styles.iconImage} />
-          <Text style={styles.signInButtonText}>Continue with Google</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.signInButton}>
-          <Image source={require("../img/microsoft.jpg")} style={styles.iconImage} />
-          <Text style={styles.signInButtonText}>Continue with Microsoft</Text>
-        </TouchableOpacity>
-        
       </View>
-      <View style={styles.termsView}>
-        <Text>By continuing you agree to our</Text>
-        <Text>Terms of Service and Privacy Policy</Text>
+
+      <View>
+        <TouchableOpacity style={styles.signInButton} onPress={()=>login()}>
+          <Text style={styles.signInButtonText}>Get Started</Text>
+        </TouchableOpacity>
+        <Text style={[{textAlign: 'center'}]}>
+          By continuing you agree to our
+        </Text>
+        <Text style={[{textAlign: 'center'}]}>
+          Terms of Service and Privacy Policy
+        </Text>
       </View>
     </View>
   );
@@ -55,12 +53,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 30,
   },
-  loginView: {
+  titleView: {
     flex: 1,
     justifyContent: 'center',
-  },
-  termsView: {
-    alignItems: "center",
   },
   welcomeText: {
     color: "black",
@@ -77,7 +72,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   signInButton: {
-    flexDirection: 'row',
     borderColor: "#e1e7ee",
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -86,11 +80,6 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 20,    
   },
-  iconImage: {
-    width: 24,
-    height: 24,
-    marginRight: 10,
-  },  
   signInButtonText: {
     color: 'black',
     fontSize: 16,
